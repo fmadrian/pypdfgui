@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from src.text import WINDOW_TITLE
+from src.text import DIALOG_TEXT, WINDOW_TITLE
 
 
 class Ui_Merge(object):
@@ -82,10 +82,10 @@ class Ui_Merge(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", WINDOW_TITLE))
-        self.btn_add.setText(_translate("Dialog", "Agregar pdf"))
-        self.lbl_name.setText(_translate("Dialog", "Nombre archivo:"))
-        self.btn_up.setText(_translate("Dialog", "Subir"))
-        self.btn_down.setText(_translate("Dialog", "Bajar"))
-        self.btn_delete.setText(_translate("Dialog", "Eliminar"))
-        self.btn_merge.setText(_translate("Dialog", "Unir"))
-        self.btn_back.setText(_translate("Dialog", "Return"))
+        self.btn_add.setText(_translate("Dialog", DIALOG_TEXT["ui_merge"]["btn_add"]))
+        self.lbl_name.setText(_translate("Dialog", DIALOG_TEXT["ui_merge"]["lbl_name"]))
+        self.btn_up.setText(_translate("Dialog", DIALOG_TEXT["ui_merge"]["btn_up"]))
+        self.btn_down.setText(_translate("Dialog", DIALOG_TEXT["ui_merge"]["btn_down"]))
+        self.btn_delete.setText(_translate("Dialog",DIALOG_TEXT["ui_merge"]["btn_delete"]))
+        self.btn_merge.setText(_translate("Dialog", DIALOG_TEXT["ui_merge"]["btn_merge"]))
+        self.btn_back.setText(_translate("Dialog", DIALOG_TEXT["ui_merge"]["btn_back"]))

@@ -10,6 +10,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+from src.text import DIALOG_TEXT, WINDOW_TITLE
+
 
 class Ui_Split(object):
     def setupUi(self, Dialog):
@@ -44,19 +46,9 @@ class Ui_Split(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.lbl_parts.setText(_translate("Dialog", "Parts:"))
-        self.btn_back.setText(_translate("Dialog", "Return"))
-        self.btn_split.setText(_translate("Dialog", "Split"))
-        self.btn_loadfile.setText(_translate("Dialog", "Load file"))
-        self.lbl_filename.setText(_translate("Dialog", "Filename:"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Dialog = QtWidgets.QDialog()
-    ui = Ui_Dialog()
-    ui.setupUi(Dialog)
-    Dialog.show()
-    sys.exit(app.exec_())
+        Dialog.setWindowTitle(_translate("Dialog", WINDOW_TITLE))
+        self.lbl_parts.setText(_translate("Dialog", DIALOG_TEXT["ui_split"]["lbl_parts"]))
+        self.btn_back.setText(_translate("Dialog", DIALOG_TEXT["ui_split"]["btn_back"]))
+        self.btn_split.setText(_translate("Dialog", DIALOG_TEXT["ui_split"]["btn_split"]))
+        self.btn_loadfile.setText(_translate("Dialog", DIALOG_TEXT["ui_split"]["btn_loadfile"]))
+        self.lbl_filename.setText(_translate("Dialog", DIALOG_TEXT["ui_split"]["lbl_filename"]))

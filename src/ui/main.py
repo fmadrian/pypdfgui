@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtWidgets
-
+from src.text import DIALOG_TEXT, WINDOW_TITLE
 
 class Ui_Main(object):
     def setupUi(self, Dialog):
@@ -35,8 +35,8 @@ class Ui_Main(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.btn_merge.setText(_translate("Dialog", "Merge"))
-        self.btn_split.setText(_translate("Dialog", "Split"))
-        self.btn_about.setText(_translate("Dialog", "About"))
-        self.btn_exit.setText(_translate("Dialog", "Exit"))
+        Dialog.setWindowTitle(_translate("Dialog", WINDOW_TITLE))
+        self.btn_merge.setText(_translate("Dialog", DIALOG_TEXT["ui_main"]["btn_merge"]))
+        self.btn_split.setText(_translate("Dialog", DIALOG_TEXT["ui_main"]["btn_split"]))
+        self.btn_about.setText(_translate("Dialog", DIALOG_TEXT["ui_main"]["btn_about"]))
+        self.btn_exit.setText(_translate("Dialog", DIALOG_TEXT["ui_main"]["btn_exit"]))
