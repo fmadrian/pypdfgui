@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QMessageBox, QFileDialog
+from src.appstate import AppState
 import src.split as functions
 class Ui_Split_Controller:
 
@@ -7,10 +8,11 @@ class Ui_Split_Controller:
         self.btn_split = ui.btn_split
         self.lbl_filename = ui.lbl_filename
         self.box_pieces = ui.box_pieces
+        self.btn_back = ui.btn_back
 
         self.btn_loadfile.clicked.connect(self.loadFile)
         self.btn_split.clicked.connect(self.split)
-
+        self.btn_back.clicked.connect(self.back)
         self.filename = ""
 
         self.update()
@@ -36,3 +38,5 @@ class Ui_Split_Controller:
             self.btn_split.setEnabled(False)
             self.lbl_filename.setText("")
 
+    def back(self):
+        AppState.open("main")

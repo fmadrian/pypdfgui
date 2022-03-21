@@ -1,6 +1,5 @@
-import sys
+from src.appstate import AppState
 from src.text import MSG_ERROR, MSG_SUCCESS, ERROR_NO_NAME, ERROR_NO_FILES, WINDOW_TITLE, MSG_ABOUT
-from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtWidgets import QFileDialog, QMessageBox
 from src.merge import PdfMerger
 
@@ -16,17 +15,15 @@ class Ui_Merge_Controller:
         self.btn_delete = window.btn_delete
         self.txt_name = window.txt_name
         self.lst_pdf = window.lst_pdf
+        self.btn_back = window.btn_back
 
-        self.action_exit = window.action_exit
-        self.action_about = window.action_about
 
         self.btn_merge.clicked.connect(self.merge)
-        self.action_exit.triggered.connect(self.exit)
-        self.action_about.triggered.connect(self.about)
         self.btn_add.clicked.connect(self.add)
         self.btn_up.clicked.connect(self.moveUp)
         self.btn_down.clicked.connect(self.moveDown)
         self.btn_delete.clicked.connect(self.delete)
+        self.btn_back.clicked.connect(self.back)
 
         self.merger = PdfMerger()
 
@@ -82,9 +79,6 @@ class Ui_Merge_Controller:
             QMessageBox(QMessageBox.Critical, MSG_ERROR,
                         str(e), QMessageBox.Ok).exec()
 
-    def exit(self):
-        sys.exit()
-
     # moves an item up in the list
     def moveUp(self):
         try:
@@ -115,6 +109,7 @@ class Ui_Merge_Controller:
         finally:
             self.show_list()
 
-    def about(self):
-        QMessageBox(QMessageBox.Information, WINDOW_TITLE,
-                    MSG_ABOUT, QMessageBox.Ok).exec()
+    def back(self):
+        AppState.open("main")
+
+    
